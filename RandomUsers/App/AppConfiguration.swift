@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+final class AppConfiguration {
+    
+    lazy var apiBaseURL: String = {
+        return "https://randomuser.me/api/"
+    }()
+    
+}

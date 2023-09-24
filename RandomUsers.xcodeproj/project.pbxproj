@@ -28,6 +28,12 @@
 		E64F352B2AC028E600E942BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F352A2AC028E600E942BA /* User.swift */; };
 		E64F352D2AC028EE00E942BA /* UserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F352C2AC028EE00E942BA /* UserQuery.swift */; };
 		E64F352F2AC028FD00E942BA /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F352E2AC028FD00E942BA /* UserRepository.swift */; };
+		E64F35322AC029EB00E942BA /* DefaultUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35312AC029EB00E942BA /* DefaultUserRepository.swift */; };
+		E64F35342AC029FC00E942BA /* UserRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35332AC029FC00E942BA /* UserRequestDTO+Mapping.swift */; };
+		E64F35362AC02A0700E942BA /* UserResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35352AC02A0700E942BA /* UserResponseDTO+Mapping.swift */; };
+		E64F35382AC0380300E942BA /* UserListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35372AC0380300E942BA /* UserListItemViewModel.swift */; };
+		E64F353A2AC0462600E942BA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35392AC0462600E942BA /* Service.swift */; };
+		E64F353C2AC0469100E942BA /* Service+Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F353B2AC0469100E942BA /* Service+Transfer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +60,12 @@
 		E64F352A2AC028E600E942BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E64F352C2AC028EE00E942BA /* UserQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuery.swift; sourceTree = "<group>"; };
 		E64F352E2AC028FD00E942BA /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		E64F35312AC029EB00E942BA /* DefaultUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserRepository.swift; sourceTree = "<group>"; };
+		E64F35332AC029FC00E942BA /* UserRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
+		E64F35352AC02A0700E942BA /* UserResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		E64F35372AC0380300E942BA /* UserListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListItemViewModel.swift; sourceTree = "<group>"; };
+		E64F35392AC0462600E942BA /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E64F353B2AC0469100E942BA /* Service+Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service+Transfer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +245,7 @@
 		E64F34FA2AC0269800E942BA /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				E64F35302AC029DE00E942BA /* User */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -240,6 +253,8 @@
 		E64F34FB2AC026A000E942BA /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E64F35332AC029FC00E942BA /* UserRequestDTO+Mapping.swift */,
+				E64F35352AC02A0700E942BA /* UserResponseDTO+Mapping.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -247,6 +262,7 @@
 		E64F34FC2AC026A800E942BA /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E64F35392AC0462600E942BA /* Service.swift */,
 				E64F34FD2AC026AE00E942BA /* Support */,
 			);
 			path = Network;
@@ -255,6 +271,7 @@
 		E64F34FD2AC026AE00E942BA /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				E64F353B2AC0469100E942BA /* Service+Transfer.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -272,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				E64F35212AC0286E00E942BA /* UserListViewModel.swift */,
+				E64F35372AC0380300E942BA /* UserListItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -332,6 +350,14 @@
 			isa = PBXGroup;
 			children = (
 				E64F35282AC028DC00E942BA /* UserListUseCase.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		E64F35302AC029DE00E942BA /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E64F35312AC029EB00E942BA /* DefaultUserRepository.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -411,17 +437,23 @@
 			files = (
 				E64F35082AC0272D00E942BA /* AppDIContainer.swift in Sources */,
 				E64F35222AC0286E00E942BA /* UserListViewModel.swift in Sources */,
+				E64F35322AC029EB00E942BA /* DefaultUserRepository.swift in Sources */,
 				E64F35012AC026F400E942BA /* AppConfiguration.swift in Sources */,
 				E64F35172AC0281200E942BA /* UserDetailViewController.swift in Sources */,
 				E64F351F2AC0286000E942BA /* UserItemCell.swift in Sources */,
 				E64F352D2AC028EE00E942BA /* UserQuery.swift in Sources */,
+				E64F35362AC02A0700E942BA /* UserResponseDTO+Mapping.swift in Sources */,
+				E64F353A2AC0462600E942BA /* Service.swift in Sources */,
+				E64F35382AC0380300E942BA /* UserListItemViewModel.swift in Sources */,
 				E64F35032AC026FF00E942BA /* AppFlowCoordinator.swift in Sources */,
 				E64F352B2AC028E600E942BA /* User.swift in Sources */,
 				E64F35242AC0287700E942BA /* UserDetailViewModel.swift in Sources */,
 				E64F350D2AC027C100E942BA /* UserFlowCoordinator.swift in Sources */,
 				E64F351B2AC0282700E942BA /* UserListViewController.swift in Sources */,
 				E64F34D72AC024A200E942BA /* AppDelegate.swift in Sources */,
+				E64F35342AC029FC00E942BA /* UserRequestDTO+Mapping.swift in Sources */,
 				E64F35142AC0280100E942BA /* BaseViewController.swift in Sources */,
+				E64F353C2AC0469100E942BA /* Service+Transfer.swift in Sources */,
 				E64F350A2AC0273B00E942BA /* UserSceneDIContainer.swift in Sources */,
 				E64F352F2AC028FD00E942BA /* UserRepository.swift in Sources */,
 				E64F35292AC028DC00E942BA /* UserListUseCase.swift in Sources */,

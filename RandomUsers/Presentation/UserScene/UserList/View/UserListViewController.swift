@@ -9,6 +9,8 @@ import UIKit
 
 class UserListViewController: UIViewController {
 
+    var viewModel: UserListViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

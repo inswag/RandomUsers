@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+protocol UserRepository {
+    func fetchUserList(
+        query: UserQuery,
+        completion: @escaping (Result<UserResponse, Error>) -> Void
+    )
+}
