@@ -8,18 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		E64F34D72AC024A200E942BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F34D62AC024A200E942BA /* AppDelegate.swift */; };
-		E64F34DB2AC024A200E942BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F34DA2AC024A200E942BA /* ViewController.swift */; };
 		E64F34E02AC024A200E942BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E64F34DF2AC024A200E942BA /* Assets.xcassets */; };
 		E64F34E32AC024A200E942BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64F34E12AC024A200E942BA /* LaunchScreen.storyboard */; };
+		E64F35012AC026F400E942BA /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35002AC026F400E942BA /* AppConfiguration.swift */; };
+		E64F35032AC026FF00E942BA /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35022AC026FF00E942BA /* AppFlowCoordinator.swift */; };
+		E64F35082AC0272D00E942BA /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35072AC0272D00E942BA /* AppDIContainer.swift */; };
+		E64F350A2AC0273B00E942BA /* UserSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35092AC0273B00E942BA /* UserSceneDIContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E64F34D32AC024A200E942BA /* RandomUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E64F34D62AC024A200E942BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E64F34DA2AC024A200E942BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E64F34DF2AC024A200E942BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E64F34E22AC024A200E942BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E64F34E42AC024A200E942BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E64F35002AC026F400E942BA /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		E64F35022AC026FF00E942BA /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
+		E64F35072AC0272D00E942BA /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		E64F35092AC0273B00E942BA /* UserSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSceneDIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +58,176 @@
 		E64F34D52AC024A200E942BA /* RandomUsers */ = {
 			isa = PBXGroup;
 			children = (
-				E64F34D62AC024A200E942BA /* AppDelegate.swift */,
-				E64F34DA2AC024A200E942BA /* ViewController.swift */,
-				E64F34DF2AC024A200E942BA /* Assets.xcassets */,
-				E64F34E12AC024A200E942BA /* LaunchScreen.storyboard */,
+				E64F34EB2AC025AF00E942BA /* App */,
+				E64F34EC2AC025C600E942BA /* Presentation */,
+				E64F34ED2AC025CC00E942BA /* Domain */,
+				E64F34EE2AC025D500E942BA /* Data */,
+				E64F34EF2AC025DD00E942BA /* Infrastructure */,
+				E64F34F02AC025E900E942BA /* Resources */,
 				E64F34E42AC024A200E942BA /* Info.plist */,
 			);
 			path = RandomUsers;
+			sourceTree = "<group>";
+		};
+		E64F34EB2AC025AF00E942BA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E64F34D62AC024A200E942BA /* AppDelegate.swift */,
+				E64F35002AC026F400E942BA /* AppConfiguration.swift */,
+				E64F35022AC026FF00E942BA /* AppFlowCoordinator.swift */,
+				E64F35062AC0271B00E942BA /* Dependencies */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E64F34EC2AC025C600E942BA /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E64F34F12AC0260D00E942BA /* UserScene */,
+				E64F34F52AC0264900E942BA /* Base */,
+				E64F34F62AC0265400E942BA /* Utils */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E64F34ED2AC025CC00E942BA /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E64F34F72AC0266700E942BA /* Entities */,
+				E64F34F82AC0266D00E942BA /* UseCases */,
+				E64F34F92AC0267600E942BA /* Interfaces */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E64F34EE2AC025D500E942BA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E64F34FA2AC0269800E942BA /* Repositories */,
+				E64F34FB2AC026A000E942BA /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E64F34EF2AC025DD00E942BA /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				E64F34FC2AC026A800E942BA /* Network */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		E64F34F02AC025E900E942BA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E64F34DF2AC024A200E942BA /* Assets.xcassets */,
+				E64F34E12AC024A200E942BA /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E64F34F12AC0260D00E942BA /* UserScene */ = {
+			isa = PBXGroup;
+			children = (
+				E64F34F42AC0263300E942BA /* Flows */,
+				E64F34F22AC0261500E942BA /* UserList */,
+				E64F34F32AC0261C00E942BA /* UserDetail */,
+			);
+			path = UserScene;
+			sourceTree = "<group>";
+		};
+		E64F34F22AC0261500E942BA /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		E64F34F32AC0261C00E942BA /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		E64F34F42AC0263300E942BA /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		E64F34F52AC0264900E942BA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E64F34F62AC0265400E942BA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E64F34F72AC0266700E942BA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		E64F34F82AC0266D00E942BA /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		E64F34F92AC0267600E942BA /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		E64F34FA2AC0269800E942BA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E64F34FB2AC026A000E942BA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E64F34FC2AC026A800E942BA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E64F34FD2AC026AE00E942BA /* Support */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E64F34FD2AC026AE00E942BA /* Support */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		E64F35062AC0271B00E942BA /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				E64F35072AC0272D00E942BA /* AppDIContainer.swift */,
+				E64F35092AC0273B00E942BA /* UserSceneDIContainer.swift */,
+			);
+			path = Dependencies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,8 +300,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E64F34DB2AC024A200E942BA /* ViewController.swift in Sources */,
+				E64F35082AC0272D00E942BA /* AppDIContainer.swift in Sources */,
+				E64F35012AC026F400E942BA /* AppConfiguration.swift in Sources */,
+				E64F35032AC026FF00E942BA /* AppFlowCoordinator.swift in Sources */,
 				E64F34D72AC024A200E942BA /* AppDelegate.swift in Sources */,
+				E64F350A2AC0273B00E942BA /* UserSceneDIContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
