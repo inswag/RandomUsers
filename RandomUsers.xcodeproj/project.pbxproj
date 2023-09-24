@@ -14,6 +14,16 @@
 		E64F35032AC026FF00E942BA /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35022AC026FF00E942BA /* AppFlowCoordinator.swift */; };
 		E64F35082AC0272D00E942BA /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35072AC0272D00E942BA /* AppDIContainer.swift */; };
 		E64F350A2AC0273B00E942BA /* UserSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35092AC0273B00E942BA /* UserSceneDIContainer.swift */; };
+		E64F350D2AC027C100E942BA /* UserFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F350C2AC027C100E942BA /* UserFlowCoordinator.swift */; };
+		E64F35142AC0280100E942BA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35132AC0280100E942BA /* BaseViewController.swift */; };
+		E64F35172AC0281200E942BA /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35152AC0281200E942BA /* UserDetailViewController.swift */; };
+		E64F35182AC0281200E942BA /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E64F35162AC0281200E942BA /* UserDetailViewController.xib */; };
+		E64F351B2AC0282700E942BA /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35192AC0282700E942BA /* UserListViewController.swift */; };
+		E64F351C2AC0282700E942BA /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E64F351A2AC0282700E942BA /* UserListViewController.xib */; };
+		E64F351F2AC0286000E942BA /* UserItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F351D2AC0286000E942BA /* UserItemCell.swift */; };
+		E64F35202AC0286000E942BA /* UserItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E64F351E2AC0286000E942BA /* UserItemCell.xib */; };
+		E64F35222AC0286E00E942BA /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35212AC0286E00E942BA /* UserListViewModel.swift */; };
+		E64F35242AC0287700E942BA /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35232AC0287700E942BA /* UserDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +36,16 @@
 		E64F35022AC026FF00E942BA /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		E64F35072AC0272D00E942BA /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		E64F35092AC0273B00E942BA /* UserSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSceneDIContainer.swift; sourceTree = "<group>"; };
+		E64F350C2AC027C100E942BA /* UserFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFlowCoordinator.swift; sourceTree = "<group>"; };
+		E64F35132AC0280100E942BA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E64F35152AC0281200E942BA /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		E64F35162AC0281200E942BA /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
+		E64F35192AC0282700E942BA /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		E64F351A2AC0282700E942BA /* UserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListViewController.xib; sourceTree = "<group>"; };
+		E64F351D2AC0286000E942BA /* UserItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItemCell.swift; sourceTree = "<group>"; };
+		E64F351E2AC0286000E942BA /* UserItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserItemCell.xib; sourceTree = "<group>"; };
+		E64F35212AC0286E00E942BA /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		E64F35232AC0287700E942BA /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +159,8 @@
 		E64F34F22AC0261500E942BA /* UserList */ = {
 			isa = PBXGroup;
 			children = (
+				E64F350E2AC027CB00E942BA /* ViewModel */,
+				E64F350F2AC027D100E942BA /* View */,
 			);
 			path = UserList;
 			sourceTree = "<group>";
@@ -146,6 +168,8 @@
 		E64F34F32AC0261C00E942BA /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
+				E64F35112AC027E400E942BA /* ViewModel */,
+				E64F35122AC027F100E942BA /* View */,
 			);
 			path = UserDetail;
 			sourceTree = "<group>";
@@ -153,6 +177,7 @@
 		E64F34F42AC0263300E942BA /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				E64F350C2AC027C100E942BA /* UserFlowCoordinator.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -160,6 +185,7 @@
 		E64F34F52AC0264900E942BA /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				E64F35132AC0280100E942BA /* BaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -167,6 +193,7 @@
 		E64F34F62AC0265400E942BA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E64F35252AC0287F00E942BA /* Extensions */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -230,6 +257,57 @@
 			path = Dependencies;
 			sourceTree = "<group>";
 		};
+		E64F350E2AC027CB00E942BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E64F35212AC0286E00E942BA /* UserListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E64F350F2AC027D100E942BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E64F35192AC0282700E942BA /* UserListViewController.swift */,
+				E64F351A2AC0282700E942BA /* UserListViewController.xib */,
+				E64F35102AC027DC00E942BA /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E64F35102AC027DC00E942BA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E64F351D2AC0286000E942BA /* UserItemCell.swift */,
+				E64F351E2AC0286000E942BA /* UserItemCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E64F35112AC027E400E942BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E64F35232AC0287700E942BA /* UserDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E64F35122AC027F100E942BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E64F35152AC0281200E942BA /* UserDetailViewController.swift */,
+				E64F35162AC0281200E942BA /* UserDetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E64F35252AC0287F00E942BA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -289,7 +367,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E64F34E32AC024A200E942BA /* LaunchScreen.storyboard in Resources */,
+				E64F351C2AC0282700E942BA /* UserListViewController.xib in Resources */,
+				E64F35202AC0286000E942BA /* UserItemCell.xib in Resources */,
 				E64F34E02AC024A200E942BA /* Assets.xcassets in Resources */,
+				E64F35182AC0281200E942BA /* UserDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,9 +382,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E64F35082AC0272D00E942BA /* AppDIContainer.swift in Sources */,
+				E64F35222AC0286E00E942BA /* UserListViewModel.swift in Sources */,
 				E64F35012AC026F400E942BA /* AppConfiguration.swift in Sources */,
+				E64F35172AC0281200E942BA /* UserDetailViewController.swift in Sources */,
+				E64F351F2AC0286000E942BA /* UserItemCell.swift in Sources */,
 				E64F35032AC026FF00E942BA /* AppFlowCoordinator.swift in Sources */,
+				E64F35242AC0287700E942BA /* UserDetailViewModel.swift in Sources */,
+				E64F350D2AC027C100E942BA /* UserFlowCoordinator.swift in Sources */,
+				E64F351B2AC0282700E942BA /* UserListViewController.swift in Sources */,
 				E64F34D72AC024A200E942BA /* AppDelegate.swift in Sources */,
+				E64F35142AC0280100E942BA /* BaseViewController.swift in Sources */,
 				E64F350A2AC0273B00E942BA /* UserSceneDIContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
