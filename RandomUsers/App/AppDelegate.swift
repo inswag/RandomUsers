@@ -29,6 +29,7 @@ extension AppDelegate {
 
     private func setupInitialRoot() {
         let naviCon = UINavigationController()
+        naviCon.navigationBar.isHidden = true
         
         self.makeUIWindow()
         self.makeRootViewController(naviCon)

@@ -10,6 +10,7 @@ import Foundation
 struct UserListItemViewModel {
     let thumbnail: String
     let username: String
+    let addressInfo: String
 }
 
 extension UserListItemViewModel {
@@ -17,6 +18,7 @@ extension UserListItemViewModel {
     init(user: User) {
         thumbnail = user.picture.thumbnail
         username = user.nameInfo.makeFullName()
+        addressInfo = user.locationInfo.makeLocation()
     }
     
 }

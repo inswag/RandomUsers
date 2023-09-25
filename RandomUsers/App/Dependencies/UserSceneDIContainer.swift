@@ -37,6 +37,7 @@ final class UserSceneDIContainer: UserFlowCoordinatorDependencies {
     ) -> UserListViewController {
         let vc = UserListViewController()
         vc.viewModel = makeUserListViewModel(actions: actions)
+        vc.imageRepository = makeImageRepository()
         return vc
     }
     
@@ -60,6 +61,7 @@ final class UserSceneDIContainer: UserFlowCoordinatorDependencies {
     ) -> UserDetailViewController {
         let vc = UserDetailViewController()
         vc.viewModel = self.makeUserDetailViewModel(user: user)
+        vc.imageRepository = makeImageRepository()
         return vc
     }
     
@@ -73,8 +75,12 @@ final class UserSceneDIContainer: UserFlowCoordinatorDependencies {
     
     func makeUserRepository() -> UserRepository {
         DefaultUserRepository(
-            dataTransferService: <#T##DataTransferService#>
+            dataTransferService: self.dependencies.apiDataTransferService
         )
+    }
+    
+    func makeImageRepository() -> ImageRepository {
+        DefaultImageRepository()
     }
 
 }

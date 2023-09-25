@@ -28,14 +28,14 @@ extension DefaultUserRepository: UserRepository {
             page: query.page
         )
         
-//        dataTransferService.request(target: .userList(form: requestDTO)) { result in
-//            switch result {
-//            case .success(let response):
-//                completion(.success(response.toDomain()))
-//            case .failure(let error):
-//                completion(.failure(error))
-//            }
-//        }
+        dataTransferService.request(target: .userList(form: requestDTO)) { result in
+            switch result {
+            case .success(let response):
+                completion(.success(response.toDomain()))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
     
 }

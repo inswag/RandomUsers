@@ -6,25 +6,24 @@
 //
 
 import Foundation
+import Moya
 
 final class AppDIContainer {
     
     lazy var appConfiguration = AppConfiguration()
     
-//    lazy var apiDataTransferService: DataTransferService = {
-//        return DefaultTransferService(provider: MoyaProvider<DefaultNetworkService>(plugins: [RequestLoggingPlugin()]))
-//    }()
+    lazy var apiDataTransferService: DataTransferService = {
+        return DefaultTransferService(provider: MoyaProvider<DefaultNetworkService>(plugins: [RequestLoggingPlugin()]))
+    }()
     
     // MARK: - DIContainers of Scenes
   
     func makeUserSceneDIContainer() -> UserSceneDIContainer {
-//        let dependencies = UserSceneDIContainer.Dependencies(
-//            apiDataTransferService: self.apiDataTransferService
-//        )
-//
-//        return UserSceneDIContainer(dependencies: dependencies)
-        
-        return UserSceneDIContainer()
+        let dependencies = UserSceneDIContainer.Dependencies(
+            apiDataTransferService: self.apiDataTransferService
+        )
+
+        return UserSceneDIContainer(dependencies: dependencies)
     }
     
 }
