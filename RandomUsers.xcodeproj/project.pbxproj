@@ -34,6 +34,11 @@
 		E64F35382AC0380300E942BA /* UserListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35372AC0380300E942BA /* UserListItemViewModel.swift */; };
 		E64F353A2AC0462600E942BA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35392AC0462600E942BA /* Service.swift */; };
 		E64F353C2AC0469100E942BA /* Service+Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F353B2AC0469100E942BA /* Service+Transfer.swift */; };
+		E64F353F2AC15B1800E942BA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E64F353E2AC15B1800E942BA /* Kingfisher */; };
+		E64F35422AC15B3600E942BA /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E64F35412AC15B3600E942BA /* Moya */; };
+		E64F35442AC15C2600E942BA /* Service+PlugIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35432AC15C2600E942BA /* Service+PlugIn.swift */; };
+		E64F35462AC17FA800E942BA /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35452AC17FA800E942BA /* ImageRepository.swift */; };
+		E64F35492AC17FEB00E942BA /* DefaultImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35482AC17FEB00E942BA /* DefaultImageRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +71,9 @@
 		E64F35372AC0380300E942BA /* UserListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListItemViewModel.swift; sourceTree = "<group>"; };
 		E64F35392AC0462600E942BA /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		E64F353B2AC0469100E942BA /* Service+Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service+Transfer.swift"; sourceTree = "<group>"; };
+		E64F35432AC15C2600E942BA /* Service+PlugIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service+PlugIn.swift"; sourceTree = "<group>"; };
+		E64F35452AC17FA800E942BA /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		E64F35482AC17FEB00E942BA /* DefaultImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E64F35422AC15B3600E942BA /* Moya in Frameworks */,
+				E64F353F2AC15B1800E942BA /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				E64F352E2AC028FD00E942BA /* UserRepository.swift */,
+				E64F35452AC17FA800E942BA /* ImageRepository.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -246,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				E64F35302AC029DE00E942BA /* User */,
+				E64F35472AC17FDB00E942BA /* Common */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -272,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				E64F353B2AC0469100E942BA /* Service+Transfer.swift */,
+				E64F35432AC15C2600E942BA /* Service+PlugIn.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -362,6 +375,14 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		E64F35472AC17FDB00E942BA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E64F35482AC17FEB00E942BA /* DefaultImageRepository.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -378,6 +399,10 @@
 			dependencies = (
 			);
 			name = RandomUsers;
+			packageProductDependencies = (
+				E64F353E2AC15B1800E942BA /* Kingfisher */,
+				E64F35412AC15B3600E942BA /* Moya */,
+			);
 			productName = RandomUsers;
 			productReference = E64F34D32AC024A200E942BA /* RandomUsers.app */;
 			productType = "com.apple.product-type.application";
@@ -406,6 +431,10 @@
 				Base,
 			);
 			mainGroup = E64F34CA2AC024A200E942BA;
+			packageReferences = (
+				E64F353D2AC15B1800E942BA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				E64F35402AC15B3600E942BA /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = E64F34D42AC024A200E942BA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -435,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E64F35492AC17FEB00E942BA /* DefaultImageRepository.swift in Sources */,
 				E64F35082AC0272D00E942BA /* AppDIContainer.swift in Sources */,
 				E64F35222AC0286E00E942BA /* UserListViewModel.swift in Sources */,
 				E64F35322AC029EB00E942BA /* DefaultUserRepository.swift in Sources */,
@@ -449,10 +479,12 @@
 				E64F352B2AC028E600E942BA /* User.swift in Sources */,
 				E64F35242AC0287700E942BA /* UserDetailViewModel.swift in Sources */,
 				E64F350D2AC027C100E942BA /* UserFlowCoordinator.swift in Sources */,
+				E64F35442AC15C2600E942BA /* Service+PlugIn.swift in Sources */,
 				E64F351B2AC0282700E942BA /* UserListViewController.swift in Sources */,
 				E64F34D72AC024A200E942BA /* AppDelegate.swift in Sources */,
 				E64F35342AC029FC00E942BA /* UserRequestDTO+Mapping.swift in Sources */,
 				E64F35142AC0280100E942BA /* BaseViewController.swift in Sources */,
+				E64F35462AC17FA800E942BA /* ImageRepository.swift in Sources */,
 				E64F353C2AC0469100E942BA /* Service+Transfer.swift in Sources */,
 				E64F350A2AC0273B00E942BA /* UserSceneDIContainer.swift in Sources */,
 				E64F352F2AC028FD00E942BA /* UserRepository.swift in Sources */,
@@ -662,6 +694,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E64F353D2AC15B1800E942BA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		E64F35402AC15B3600E942BA /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E64F353E2AC15B1800E942BA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E64F353D2AC15B1800E942BA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		E64F35412AC15B3600E942BA /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E64F35402AC15B3600E942BA /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E64F34CB2AC024A200E942BA /* Project object */;
 }
