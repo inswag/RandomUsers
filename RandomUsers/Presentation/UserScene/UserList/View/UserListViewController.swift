@@ -56,6 +56,7 @@ class UserListViewController: BaseViewController {
         viewModel.resetPage()
         self.switchButton.setTitle(viewModel.gender.rawValue,
                                    for: .normal)
+        self.switchButton.isHidden = true
         self.load(category: .fullPage)
     }
     
@@ -67,6 +68,8 @@ class UserListViewController: BaseViewController {
     // MARK: API Methods
     
     private func load(category: RequestLoading) {
+        self.tableView.isUserInteractionEnabled = false
+        
         if category == .fullPage {
             viewModel.didLoadPage { [weak self] error in
                 if let error = error {
@@ -88,6 +91,8 @@ class UserListViewController: BaseViewController {
     
     private func reload() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+            self.switchButton.isHidden = false
+            self.tableView.isUserInteractionEnabled = true
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
         }
