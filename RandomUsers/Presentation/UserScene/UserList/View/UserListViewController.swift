@@ -54,6 +54,8 @@ class UserListViewController: BaseViewController {
     @IBAction func switchGender(_ sender: UIButton) {
         viewModel.didSwitchGender()
         viewModel.resetPage()
+        self.tableView.setContentOffset(self.tableView.contentOffset,
+                                        animated: false)
         self.switchButton.setTitle(viewModel.gender.rawValue,
                                    for: .normal)
         self.switchButton.isHidden = true
