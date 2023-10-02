@@ -5,7 +5,10 @@
 //  Created by Insu Park on 2023/09/24.
 //
 
+import Combine
 import Foundation
+
+import CombineMoya
 import Moya
 
 enum DataTransferError: Error {
@@ -20,6 +23,10 @@ protocol DataTransferService {
         target: DefaultNetworkService,
         completion: @escaping (Result<UserResponseDTO, DataTransferError>) -> Void
     )
+    
+    func request(
+        target: DefaultNetworkService
+    ) -> AnyPublisher<Response, Error>
 }
 
 protocol ResponseDecoder {
@@ -37,6 +44,14 @@ final class DefaultTransferService: DataTransferService {
 }
 
 extension DefaultTransferService {
+    
+    // MARK: - Combine Moya
+    
+    func request(target: DefaultNetworkService) -> AnyPublisher<Response, Error> {
+        provider.requestPublisher(target)
+            .mapError { $0 as Error }
+            .eraseToAnyPublisher()
+    }
     
     // MARK: - Original Moya
     
