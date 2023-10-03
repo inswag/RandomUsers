@@ -24,9 +24,14 @@ protocol DataTransferService {
         completion: @escaping (Result<UserResponseDTO, DataTransferError>) -> Void
     )
     
+    // MARK: - Combine Moya
+    
+    typealias ParsingResponse = Result<UserResponseDTO, DataTransferError>
+    
     func request(
         target: DefaultNetworkService
-    ) -> AnyPublisher<Response, Error>
+    ) -> AnyPublisher<ParsingResponse, Error>
+    
 }
 
 protocol ResponseDecoder {
@@ -47,9 +52,10 @@ extension DefaultTransferService {
     
     // MARK: - Combine Moya
     
-    func request(target: DefaultNetworkService) -> AnyPublisher<Response, Error> {
+    func request(target: DefaultNetworkService) -> AnyPublisher<ParsingResponse, Error> {
         provider.requestPublisher(target)
             .mapError { $0 as Error }
+            .map { self.decode(data: $0.data) }
             .eraseToAnyPublisher()
     }
     
@@ -65,7 +71,7 @@ extension DefaultTransferService {
                 let result = self.decode(data: response.data)
                 completion(result)
             case .failure(let error):
-                print(error.errorDescription)
+                print(error)
             }
         }
     }

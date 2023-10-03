@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 struct UserListViewModelActions {
     let showUserDetail: (User) -> Void
@@ -48,7 +49,7 @@ enum Gender: String {
 
 typealias CallFinish = (Error?) -> Void
 
-final class DefaultUserListViewModel: UserListViewModel {
+final class DefaultUserListViewModel: UserListViewModel, ObservableObject {
     
     // MARK: - Module Interface
     
@@ -57,7 +58,7 @@ final class DefaultUserListViewModel: UserListViewModel {
     
     // MARK: - OUTPUT
     
-    var users: [User] = []
+    @Published var users: [User] = []
     var usersUUID: [String] = []
     var gender: Gender = .male
     var page: Int = 1
@@ -65,6 +66,10 @@ final class DefaultUserListViewModel: UserListViewModel {
     // API CALL
     var isLoading: Bool = false
     var requestLoading: RequestLoading = .fullPage
+    
+    // MARK: - Combine
+    
+    var subscriptions: Set<AnyCancellable> = []
     
     // MARK: Initializer
     
@@ -93,25 +98,53 @@ final class DefaultUserListViewModel: UserListViewModel {
             page += 1
         }
         
-        self.userListUseCase.execute(
-            requestValue: .init(query: UserQuery.init(gender: self.gender.getQueryString(), page: "\(page)"))
-        ) { [weak self] response in
-            guard let self = self else { return }
-            
-            self.isLoading = false
-
-            switch response {
-            case .success(let page):
-                page.users.forEach {
-                    if !self.usersUUID.contains($0.loginInfo.uuid) {
-                        self.users.append($0)
-                    }
+        self.userListUseCase
+            .execute(requestValue: .init(query: UserQuery.init(gender: self.gender.getQueryString(), page: "\(page)")))
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    self.isLoading = false
+                    print("Finished userList viewModel call")
+                case .failure(let error):
+                    print("Failed userList viewModel call : ", error)
                 }
-                completion(nil)
-            case .failure(let error):
-                completion(error)
+            } receiveValue: { result in
+                switch result {
+                case .success(let data):
+                    data.toDomain().users.forEach {
+                        if !self.usersUUID.contains($0.loginInfo.uuid) {
+                            self.users.append($0)
+                        }
+                    }
+                    
+                    completion(nil)
+                case .failure(let parsingError):
+                    print("error : ", parsingError)
+                }
             }
-        }
+            .store(in: &subscriptions)
+
+        
+        
+//        self.userListUseCase.execute(
+//            requestValue: .init(query: UserQuery.init(gender: self.gender.getQueryString(), page: "\(page)"))
+//        ) { [weak self] response in
+//            guard let self = self else { return }
+//            
+//            self.isLoading = false
+//
+//            switch response {
+//            case .success(let page):
+//                page.users.forEach {
+//                    if !self.usersUUID.contains($0.loginInfo.uuid) {
+//                        self.users.append($0)
+//                    }
+//                }
+//                completion(nil)
+//            case .failure(let error):
+//                completion(error)
+//            }
+//        }
     }
     
     func resetPage() {

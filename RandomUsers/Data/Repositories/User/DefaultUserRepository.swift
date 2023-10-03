@@ -29,9 +29,6 @@ extension DefaultUserRepository: UserRepository {
             page: query.page
         )
         
-        
-        
-        
         dataTransferService.request(target: .userList(form: requestDTO)) { result in
             switch result {
             case .success(let response):
@@ -45,27 +42,31 @@ extension DefaultUserRepository: UserRepository {
     // MARK: Combine
     
     func fetchUserList(
-        query: UserQuery) -> AnyCancellable
+        query: UserQuery) ->  AnyPublisher<Result<UserResponseDTO, DataTransferError>, Error>
     {
         let requestDTO = UserRequestDTO(
             gender: query.gender,
             page: query.page
         )
-        
-        dataTransferService
+  
+        return dataTransferService
             .request(target: .userList(form: requestDTO))
-            .sink { completion in
-                switch completion {
-                case .finished:
-                    print("User List Request Finished")
-                case .failure(let error):
-                    print("User List Request Fail : ", error)
-                }
-            } receiveValue: { response in
-                
-                
-                response.data
-            }
+
+        
+//        dataTransferService
+//            .request(target: .userList(form: requestDTO))
+//            .sink { completion in
+//                switch completion {
+//                case .finished:
+//                    print("User List Request Finished")
+//                case .failure(let error):
+//                    print("User List Request Fail : ", error)
+//                }
+//            } receiveValue: { response in
+//                
+//                
+//                response.data
+//            }
 
         
     }
