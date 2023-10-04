@@ -38,6 +38,8 @@
 		E64F35442AC15C2600E942BA /* Service+PlugIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35432AC15C2600E942BA /* Service+PlugIn.swift */; };
 		E64F35462AC17FA800E942BA /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35452AC17FA800E942BA /* ImageRepository.swift */; };
 		E64F35492AC17FEB00E942BA /* DefaultImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35482AC17FEB00E942BA /* DefaultImageRepository.swift */; };
+		E66865632ACD596900E455A4 /* UserListViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66865622ACD596900E455A4 /* UserListViewRow.swift */; };
+		E68A85672ACD4360002741EC /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68A85662ACD4360002741EC /* UserListView.swift */; };
 		E6D7C48D2ACA867A008834B5 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E6D7C48C2ACA867A008834B5 /* CombineMoya */; };
 		E6D7C48F2ACA867A008834B5 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E6D7C48E2ACA867A008834B5 /* Moya */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,8 @@
 		E64F35432AC15C2600E942BA /* Service+PlugIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service+PlugIn.swift"; sourceTree = "<group>"; };
 		E64F35452AC17FA800E942BA /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 		E64F35482AC17FEB00E942BA /* DefaultImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageRepository.swift; sourceTree = "<group>"; };
+		E66865622ACD596900E455A4 /* UserListViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewRow.swift; sourceTree = "<group>"; };
+		E68A85662ACD4360002741EC /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,7 @@
 		E64F34F22AC0261500E942BA /* UserList */ = {
 			isa = PBXGroup;
 			children = (
+				E68A85652ACD4340002741EC /* SwiftUI */,
 				E64F350E2AC027CB00E942BA /* ViewModel */,
 				E64F350F2AC027D100E942BA /* View */,
 			);
@@ -385,6 +390,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		E68A85652ACD4340002741EC /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				E68A85662ACD4360002741EC /* UserListView.swift */,
+				E66865622ACD596900E455A4 /* UserListViewRow.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,8 +504,10 @@
 				E64F35462AC17FA800E942BA /* ImageRepository.swift in Sources */,
 				E64F353C2AC0469100E942BA /* Service+Transfer.swift in Sources */,
 				E64F350A2AC0273B00E942BA /* UserSceneDIContainer.swift in Sources */,
+				E66865632ACD596900E455A4 /* UserListViewRow.swift in Sources */,
 				E64F352F2AC028FD00E942BA /* UserRepository.swift in Sources */,
 				E64F35292AC028DC00E942BA /* UserListUseCase.swift in Sources */,
+				E68A85672ACD4360002741EC /* UserListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
