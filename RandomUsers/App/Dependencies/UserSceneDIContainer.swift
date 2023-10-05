@@ -5,8 +5,9 @@
 //  Created by Insu Park on 2023/09/24.
 //
 
-import UIKit
 import Combine
+import SwiftUI
+import UIKit
 
 final class UserSceneDIContainer: UserFlowCoordinatorDependencies {
     
@@ -31,15 +32,29 @@ final class UserSceneDIContainer: UserFlowCoordinatorDependencies {
         )
     }
     
+    // MARK: - Configure View with SwiftUI
+    
+    func makeNewUserListViewModel() -> NewUserListViewModel {
+        NewUserListViewModel(userListUseCase: makeUserListUseCase())
+    }
+    
     // MARK: - Configure VCs
     
     func makeUserListController(
         with actions: UserListViewModelActions
-    ) -> UserListViewController {
-        let vc = UserListViewController()
-        vc.viewModel = makeUserListViewModel(actions: actions)
-        vc.imageRepository = makeImageRepository()
-        return vc
+    ) -> UIViewController {
+        
+        if #available(iOS 13.0, *) {
+            let vc = UserListView(
+                viewModel: makeNewUserListViewModel()
+            )
+            return UIHostingController(rootView: vc)
+        } else {
+            let vc = UserListViewController()
+            vc.viewModel = makeUserListViewModel(actions: actions)
+            vc.imageRepository = makeImageRepository()
+            return vc
+        }
     }
     
     func makeUserListViewModel(
