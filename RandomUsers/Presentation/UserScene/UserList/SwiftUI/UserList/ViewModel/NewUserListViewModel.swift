@@ -1,33 +1,12 @@
 //
-//  UserListView.swift
+//  NewUserListViewModel.swift
 //  RandomUsers
 //
-//  Created by Insu Park on 10/4/23.
+//  Created by Insu Park on 10/5/23.
 //
 
-import SwiftUI
+import Foundation
 import Combine
-
-@available(iOS 13.0, *)
-struct UserListView: View {
-    
-    @ObservedObject var viewModel: NewUserListViewModel
-    
-    var body: some View {
-        List {
-            ForEach(viewModel.items) { item in
-                NavigationLink {
-    //                UIHosting
-                } label: {
-                    UserListViewRow(item: item)
-                }
-            }
-        }.onAppear {
-            viewModel.fetchList(requestValue: UserListUseCaseRequestValue(query: UserQuery(gender: "male", page: "1")))
-        }
-    }
-    
-}
 
 @available(iOS 13.0, *)
 final class NewUserListViewModel: ObservableObject {

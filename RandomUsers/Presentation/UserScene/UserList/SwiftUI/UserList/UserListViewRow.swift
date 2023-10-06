@@ -16,9 +16,11 @@ struct UserListViewRow: View {
             Image("no_image", bundle: nil)
                 .resizable()
                 .frame(width: 80, height: 80)
-            VStack {
-                Text("USERNAME")
-                Text("AddressInfo")
+            VStack(alignment: .leading) {
+                Text(item.username)
+                    .font(.headline)
+                Text(item.addressInfo)
+                    .font(.subheadline)
             }
         }
     }

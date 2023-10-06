@@ -39,6 +39,8 @@
 		E64F35462AC17FA800E942BA /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35452AC17FA800E942BA /* ImageRepository.swift */; };
 		E64F35492AC17FEB00E942BA /* DefaultImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35482AC17FEB00E942BA /* DefaultImageRepository.swift */; };
 		E66865632ACD596900E455A4 /* UserListViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66865622ACD596900E455A4 /* UserListViewRow.swift */; };
+		E66865672ACE9A8B00E455A4 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66865662ACE9A8B00E455A4 /* UserDetailView.swift */; };
+		E668656A2ACEA8BC00E455A4 /* NewUserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66865692ACEA8BC00E455A4 /* NewUserListViewModel.swift */; };
 		E68A85672ACD4360002741EC /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68A85662ACD4360002741EC /* UserListView.swift */; };
 		E6D7C48D2ACA867A008834B5 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E6D7C48C2ACA867A008834B5 /* CombineMoya */; };
 		E6D7C48F2ACA867A008834B5 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E6D7C48E2ACA867A008834B5 /* Moya */; };
@@ -78,6 +80,8 @@
 		E64F35452AC17FA800E942BA /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 		E64F35482AC17FEB00E942BA /* DefaultImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageRepository.swift; sourceTree = "<group>"; };
 		E66865622ACD596900E455A4 /* UserListViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewRow.swift; sourceTree = "<group>"; };
+		E66865662ACE9A8B00E455A4 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		E66865692ACEA8BC00E455A4 /* NewUserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserListViewModel.swift; sourceTree = "<group>"; };
 		E68A85662ACD4360002741EC /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -390,11 +394,37 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		E66865642ACE9A6700E455A4 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				E66865682ACEA8A600E455A4 /* ViewModel */,
+				E68A85662ACD4360002741EC /* UserListView.swift */,
+				E66865622ACD596900E455A4 /* UserListViewRow.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		E66865652ACE9A7000E455A4 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E66865662ACE9A8B00E455A4 /* UserDetailView.swift */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		E66865682ACEA8A600E455A4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E66865692ACEA8BC00E455A4 /* NewUserListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E68A85652ACD4340002741EC /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				E68A85662ACD4360002741EC /* UserListView.swift */,
-				E66865622ACD596900E455A4 /* UserListViewRow.swift */,
+				E66865642ACE9A6700E455A4 /* UserList */,
+				E66865652ACE9A7000E455A4 /* UserDetail */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -485,10 +515,12 @@
 				E64F35082AC0272D00E942BA /* AppDIContainer.swift in Sources */,
 				E64F35222AC0286E00E942BA /* UserListViewModel.swift in Sources */,
 				E64F35322AC029EB00E942BA /* DefaultUserRepository.swift in Sources */,
+				E66865672ACE9A8B00E455A4 /* UserDetailView.swift in Sources */,
 				E64F35012AC026F400E942BA /* AppConfiguration.swift in Sources */,
 				E64F35172AC0281200E942BA /* UserDetailViewController.swift in Sources */,
 				E64F351F2AC0286000E942BA /* UserItemCell.swift in Sources */,
 				E64F352D2AC028EE00E942BA /* UserQuery.swift in Sources */,
+				E668656A2ACEA8BC00E455A4 /* NewUserListViewModel.swift in Sources */,
 				E64F35362AC02A0700E942BA /* UserResponseDTO+Mapping.swift in Sources */,
 				E64F353A2AC0462600E942BA /* Service.swift in Sources */,
 				E64F35382AC0380300E942BA /* UserListItemViewModel.swift in Sources */,
