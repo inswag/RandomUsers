@@ -44,7 +44,7 @@ final class UserSceneDIContainer: UserFlowCoordinatorDependencies {
         with actions: UserListViewModelActions
     ) -> UIViewController {
         
-        if #available(iOS 13.0, *) {
+        if #available(iOS 14.0, *) {
             let vc = UserListView(
                 viewModel: makeNewUserListViewModel()
             )
