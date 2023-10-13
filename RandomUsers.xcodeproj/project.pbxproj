@@ -35,10 +35,15 @@
 		E64F353A2AC0462600E942BA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35392AC0462600E942BA /* Service.swift */; };
 		E64F353C2AC0469100E942BA /* Service+Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F353B2AC0469100E942BA /* Service+Transfer.swift */; };
 		E64F353F2AC15B1800E942BA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E64F353E2AC15B1800E942BA /* Kingfisher */; };
-		E64F35422AC15B3600E942BA /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E64F35412AC15B3600E942BA /* Moya */; };
 		E64F35442AC15C2600E942BA /* Service+PlugIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35432AC15C2600E942BA /* Service+PlugIn.swift */; };
 		E64F35462AC17FA800E942BA /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35452AC17FA800E942BA /* ImageRepository.swift */; };
 		E64F35492AC17FEB00E942BA /* DefaultImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F35482AC17FEB00E942BA /* DefaultImageRepository.swift */; };
+		E66865632ACD596900E455A4 /* UserListViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66865622ACD596900E455A4 /* UserListViewRow.swift */; };
+		E66865672ACE9A8B00E455A4 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66865662ACE9A8B00E455A4 /* UserDetailView.swift */; };
+		E668656A2ACEA8BC00E455A4 /* NewUserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66865692ACEA8BC00E455A4 /* NewUserListViewModel.swift */; };
+		E68A85672ACD4360002741EC /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68A85662ACD4360002741EC /* UserListView.swift */; };
+		E6D7C48D2ACA867A008834B5 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E6D7C48C2ACA867A008834B5 /* CombineMoya */; };
+		E6D7C48F2ACA867A008834B5 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E6D7C48E2ACA867A008834B5 /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +79,10 @@
 		E64F35432AC15C2600E942BA /* Service+PlugIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service+PlugIn.swift"; sourceTree = "<group>"; };
 		E64F35452AC17FA800E942BA /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 		E64F35482AC17FEB00E942BA /* DefaultImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageRepository.swift; sourceTree = "<group>"; };
+		E66865622ACD596900E455A4 /* UserListViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewRow.swift; sourceTree = "<group>"; };
+		E66865662ACE9A8B00E455A4 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		E66865692ACEA8BC00E455A4 /* NewUserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserListViewModel.swift; sourceTree = "<group>"; };
+		E68A85662ACD4360002741EC /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E64F35422AC15B3600E942BA /* Moya in Frameworks */,
+				E6D7C48D2ACA867A008834B5 /* CombineMoya in Frameworks */,
 				E64F353F2AC15B1800E942BA /* Kingfisher in Frameworks */,
+				E6D7C48F2ACA867A008834B5 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +199,7 @@
 		E64F34F22AC0261500E942BA /* UserList */ = {
 			isa = PBXGroup;
 			children = (
+				E68A85652ACD4340002741EC /* SwiftUI */,
 				E64F350E2AC027CB00E942BA /* ViewModel */,
 				E64F350F2AC027D100E942BA /* View */,
 			);
@@ -383,6 +394,41 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		E66865642ACE9A6700E455A4 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				E66865682ACEA8A600E455A4 /* ViewModel */,
+				E68A85662ACD4360002741EC /* UserListView.swift */,
+				E66865622ACD596900E455A4 /* UserListViewRow.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		E66865652ACE9A7000E455A4 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E66865662ACE9A8B00E455A4 /* UserDetailView.swift */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		E66865682ACEA8A600E455A4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E66865692ACEA8BC00E455A4 /* NewUserListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E68A85652ACD4340002741EC /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				E66865642ACE9A6700E455A4 /* UserList */,
+				E66865652ACE9A7000E455A4 /* UserDetail */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -401,7 +447,8 @@
 			name = RandomUsers;
 			packageProductDependencies = (
 				E64F353E2AC15B1800E942BA /* Kingfisher */,
-				E64F35412AC15B3600E942BA /* Moya */,
+				E6D7C48C2ACA867A008834B5 /* CombineMoya */,
+				E6D7C48E2ACA867A008834B5 /* Moya */,
 			);
 			productName = RandomUsers;
 			productReference = E64F34D32AC024A200E942BA /* RandomUsers.app */;
@@ -433,7 +480,7 @@
 			mainGroup = E64F34CA2AC024A200E942BA;
 			packageReferences = (
 				E64F353D2AC15B1800E942BA /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				E64F35402AC15B3600E942BA /* XCRemoteSwiftPackageReference "Moya" */,
+				E6D7C48B2ACA867A008834B5 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = E64F34D42AC024A200E942BA /* Products */;
 			projectDirPath = "";
@@ -468,10 +515,12 @@
 				E64F35082AC0272D00E942BA /* AppDIContainer.swift in Sources */,
 				E64F35222AC0286E00E942BA /* UserListViewModel.swift in Sources */,
 				E64F35322AC029EB00E942BA /* DefaultUserRepository.swift in Sources */,
+				E66865672ACE9A8B00E455A4 /* UserDetailView.swift in Sources */,
 				E64F35012AC026F400E942BA /* AppConfiguration.swift in Sources */,
 				E64F35172AC0281200E942BA /* UserDetailViewController.swift in Sources */,
 				E64F351F2AC0286000E942BA /* UserItemCell.swift in Sources */,
 				E64F352D2AC028EE00E942BA /* UserQuery.swift in Sources */,
+				E668656A2ACEA8BC00E455A4 /* NewUserListViewModel.swift in Sources */,
 				E64F35362AC02A0700E942BA /* UserResponseDTO+Mapping.swift in Sources */,
 				E64F353A2AC0462600E942BA /* Service.swift in Sources */,
 				E64F35382AC0380300E942BA /* UserListItemViewModel.swift in Sources */,
@@ -487,8 +536,10 @@
 				E64F35462AC17FA800E942BA /* ImageRepository.swift in Sources */,
 				E64F353C2AC0469100E942BA /* Service+Transfer.swift in Sources */,
 				E64F350A2AC0273B00E942BA /* UserSceneDIContainer.swift in Sources */,
+				E66865632ACD596900E455A4 /* UserListViewRow.swift in Sources */,
 				E64F352F2AC028FD00E942BA /* UserRepository.swift in Sources */,
 				E64F35292AC028DC00E942BA /* UserListUseCase.swift in Sources */,
+				E68A85672ACD4360002741EC /* UserListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +678,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RandomUsers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -653,6 +705,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RandomUsers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -704,7 +757,7 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		E64F35402AC15B3600E942BA /* XCRemoteSwiftPackageReference "Moya" */ = {
+		E6D7C48B2ACA867A008834B5 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
@@ -720,9 +773,14 @@
 			package = E64F353D2AC15B1800E942BA /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		E64F35412AC15B3600E942BA /* Moya */ = {
+		E6D7C48C2ACA867A008834B5 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E64F35402AC15B3600E942BA /* XCRemoteSwiftPackageReference "Moya" */;
+			package = E6D7C48B2ACA867A008834B5 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		E6D7C48E2ACA867A008834B5 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6D7C48B2ACA867A008834B5 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */

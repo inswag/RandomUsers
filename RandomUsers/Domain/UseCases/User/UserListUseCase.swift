@@ -6,12 +6,17 @@
 //
 
 import Foundation
+import Combine
 
 protocol UserListUseCase {
     func execute(
         requestValue: UserListUseCaseRequestValue,
         completion: @escaping (Result<UserResponse, Error>) -> Void
     )
+    
+    func execute(
+        requestValue: UserListUseCaseRequestValue
+    ) -> AnyPublisher<Result<UserResponseDTO, DataTransferError>, Error>
 }
 
 final class DefaultUserListUseCase: UserListUseCase {
@@ -31,6 +36,15 @@ final class DefaultUserListUseCase: UserListUseCase {
         ) { response in
                 completion(response)
         }
+    }
+    
+    // MARK: - Combine
+    
+    func execute(
+        requestValue: UserListUseCaseRequestValue
+    ) -> AnyPublisher<Result<UserResponseDTO, DataTransferError>, Error> {
+        return userRepository
+            .fetchUserList(query: requestValue.query)
     }
     
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 final class DefaultUserRepository {
 
@@ -36,6 +37,38 @@ extension DefaultUserRepository: UserRepository {
                 completion(.failure(error))
             }
         }
+    }
+    
+    // MARK: Combine
+    
+    func fetchUserList(
+        query: UserQuery) ->  AnyPublisher<Result<UserResponseDTO, DataTransferError>, Error>
+    {
+        let requestDTO = UserRequestDTO(
+            gender: query.gender,
+            page: query.page
+        )
+  
+        return dataTransferService
+            .request(target: .userList(form: requestDTO))
+
+        
+//        dataTransferService
+//            .request(target: .userList(form: requestDTO))
+//            .sink { completion in
+//                switch completion {
+//                case .finished:
+//                    print("User List Request Finished")
+//                case .failure(let error):
+//                    print("User List Request Fail : ", error)
+//                }
+//            } receiveValue: { response in
+//                
+//                
+//                response.data
+//            }
+
+        
     }
     
 }

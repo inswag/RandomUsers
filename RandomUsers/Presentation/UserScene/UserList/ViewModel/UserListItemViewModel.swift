@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct UserListItemViewModel {
+struct UserListItemViewModel: Identifiable {
+    let id = UUID()
     let thumbnail: String
     let username: String
     let addressInfo: String

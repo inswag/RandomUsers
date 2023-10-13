@@ -10,7 +10,7 @@ import UIKit
 protocol UserFlowCoordinatorDependencies {
     func makeUserListController(
         with actions: UserListViewModelActions
-    ) -> UserListViewController
+    ) -> UIViewController
     func makeUserDetailController(
         user: User
     ) -> UserDetailViewController
@@ -21,7 +21,7 @@ final class UserFlowCoordinator {
     private weak var naviCon: UINavigationController?
     private let dependencies: UserFlowCoordinatorDependencies
     
-    private weak var userListVC: UserListViewController?
+    private weak var userListVC: UIViewController?
     private weak var userDetailVC: UserDetailViewController?
     
     init(
